@@ -1,0 +1,33 @@
+<?xml version = "1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns = "http://www.w3.org/1999/xhtml"
+      xmlns:ui = "http://java.sun.com/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+>
+
+
+<h:body>
+
+<ui:composition>
+    <header class="main-header">
+        <nav class="nav-links">
+            <a href="../usuario/index.xhtml">Usuario</a>
+            <a href="../categoria/index.xhtml">Categoria</a>
+            <a href="../producto/index.xhtml">Productos</a>
+            <a href="../pedido/index.xhtml">Pedidos</a>
+        </nav>
+    </header>
+    <h:outputScript target="head">
+        function redirectToPage(role) {
+        if (role != 'admin') {
+            window.location.href = '../../index.xhtml';
+          }
+        }
+        redirectToPage('#{sessionScope.session.rol}');
+    </h:outputScript>
+</ui:composition>
+</h:body>
+</html>
+

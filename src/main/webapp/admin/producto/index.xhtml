@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <link rel="stylesheet" type="text/css" href="../styles.css" />
+</h:head>
+
+
+<h:body>
+
+    <ui:composition template = "../templates/commonAdmin.xhtml">
+
+        <ui:define name = "content"  >
+            <div class="container">
+                <div  class="content">
+                    <h:form>
+                        <div>
+                            <h:commandButton  styleClass="button-agregar" value="Agregar plato"
+                                              action="#{platoBean.nuevo()}" />
+                        </div>
+
+                    </h:form  >
+                    <h2>Listado de Platos</h2>
+                    <table style="width: 100%">
+                        <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Precio</th>
+                            <th>Categoria</th>
+
+
+                            <th>Acciones</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <ui:repeat value="#{platoBean.obtenerPlatos()}" var="plato">
+                            <tr>
+                                <td style="text-align: center">#{plato.nombre}</td>
+                                <td style="text-align: center">#{plato.precio}</td>
+                                <td style="text-align: center">#{categoriaBean.obtenerCategoriaPorId(plato.categoria).nombre}</td>
+                                <td>
+                                    <h:form>
+                                        <h:commandButton value="Editar" styleClass="button"
+                                                         action="#{platoBean.editar(plato.id)}" />
+                                    </h:form>
+                                </td>
+                            </tr>
+                        </ui:repeat>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </ui:define>
+
+
+    </ui:composition>
+
+</h:body>
+</html>

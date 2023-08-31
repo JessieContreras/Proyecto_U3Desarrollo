@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <link rel="stylesheet" type="text/css" href="../styles.css" />
+</h:head>
+
+
+<h:body>
+
+    <ui:composition template = "../templates/commonAdmin.xhtml">
+
+        <ui:define name = "content">
+            <h:form id="agregarPlato" enctype="multipart/form-data">
+                <div class="table-container"> <!-- Agregar el contenedor para centrar -->
+                    <h:panelGrid columns="2" cellspacing="20" border="1" class="table-style">
+                        <f:facet name="header">
+                            <h:outputText value="Guardar un Producto" />
+                        </f:facet>
+                        <h:inputFile value="#{imagenFile}" />
+           <br></br>
+                        <h:outputText value="Nombre" />
+                        <h:inputText value="#{plato.nombre}" />
+
+                        <h:outputText value="Precio" />
+                        <h:inputText value="#{plato.precio}" />
+
+                        <h:outputText value="Categoria" />
+                        <h:selectOneMenu value="#{plato.categoria}" >
+                            <f:selectItems value="#{categoriaBean.obtenerCategorias()}" var="categoria" itemLabel="#{categoria.nombre}" itemValue="#{categoria.id}" />
+                        </h:selectOneMenu>
+
+                        <f:facet name="footer">
+                            <h:commandButton value="Guardar" action="#{platoBean.guardar(plato,imagenFile)}" styleClass="button" />
+                        </f:facet>
+                    </h:panelGrid>
+                </div>
+            </h:form>
+        </ui:define>
+
+
+    </ui:composition>
+
+</h:body>
+</html>
