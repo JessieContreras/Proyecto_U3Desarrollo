@@ -68,21 +68,7 @@ public class CarritoBean implements Serializable {
         return df.format(subtotal());
     }
     
-    public double iva() {
-        double iva = subtotal();
-
-        return (iva*1.12 - iva);
-    }
-    public String ivaString() {
-        return df.format( iva() );
-    }
-    public double total() {
-        return (subtotal()*1.12);
-    }
-    public String totalString() {
-
-        return df.format(total() );
-    }
+   
 
     public String faturar() {
         Factura factura = new Factura();
