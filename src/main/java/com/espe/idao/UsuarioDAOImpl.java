@@ -25,4 +25,13 @@ public class UsuarioDAOImpl implements IUsuarioDAO {
         ///JPAUtil.shutdown();
     }
 
+     @Override
+    public Usuario buscar(int id) {
+        Usuario oUsuario = new Usuario();
+        oUsuario = entityManager.find(Usuario.class, id);
+        //JPAUtil.shutdown();
+        return oUsuario;
+    }
+    
+
    
