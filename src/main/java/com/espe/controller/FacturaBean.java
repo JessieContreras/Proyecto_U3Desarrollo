@@ -33,7 +33,6 @@ public class FacturaBean {
     }
 
     public Factura obtenerFacturaPorId(int id){
-
         Factura oFactura;
         return facturaDAO.buscar(id);
     }
@@ -47,7 +46,6 @@ public class FacturaBean {
         facturaDAO.eliminar(id);
         return "/index.xhtml";
     }
-
         public String nuevo(){
         Factura oFactura = new Factura();
         //crear una coleccion de tipo map
