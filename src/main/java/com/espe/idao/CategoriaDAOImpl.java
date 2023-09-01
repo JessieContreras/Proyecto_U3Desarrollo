@@ -17,6 +17,12 @@ public class CategoriaDAOImpl implements ICategoriaDAO {
         entityManager.getTransaction().commit();
         //JPAUtil.shutdown();
     }
-
+    @Override
+    public void editar(Categoria categoria) {
+        entityManager.getTransaction().begin();
+        entityManager.merge(categoria);
+        entityManager.getTransaction().commit();
+        ///JPAUtil.shutdown();
+    }
 
 }
