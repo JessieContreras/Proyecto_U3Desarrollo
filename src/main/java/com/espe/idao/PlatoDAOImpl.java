@@ -31,3 +31,11 @@ public class PlatoDAOImpl implements IPlatoDAO {
         //JPAUtil.shutdown();
         return oPlato;
     }
+     @Override
+    public List<Plato> obtenerPlatos() {
+        List<Plato> listaPlatos;
+        //sentencia JPQL
+        Query query = entityManager.createQuery("SELECT u FROM Plato u");
+        listaPlatos = query.getResultList();
+        return listaPlatos;
+    }
