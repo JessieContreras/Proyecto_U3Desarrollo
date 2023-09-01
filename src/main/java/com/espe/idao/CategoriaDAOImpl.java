@@ -17,16 +17,20 @@ public class CategoriaDAOImpl implements ICategoriaDAO {
         entityManager.getTransaction().commit();
         //JPAUtil.shutdown();
     }
-   
-    
- @Override
+    @Override
+    public void editar(Categoria categoria) {
+        entityManager.getTransaction().begin();
+        entityManager.merge(categoria);
+        entityManager.getTransaction().commit();
+        ///JPAUtil.shutdown();
+    }
+    @Override
     public Categoria buscar(int id) {
         Categoria oCategoria = new Categoria();
         oCategoria = entityManager.find(Categoria.class, id);
         //JPAUtil.shutdown();
         return oCategoria;
     }
-}
     @Override
     public List<Categoria> obtenerCategorias() {
         List<Categoria> listaCategorias;
@@ -35,8 +39,7 @@ public class CategoriaDAOImpl implements ICategoriaDAO {
         listaCategorias = query.getResultList();
         return listaCategorias;
     }
-
- @Override
+    @Override
     public void eliminar(int id) {
         Categoria oCategoria;
         oCategoria = entityManager.find(Categoria.class, id);
