@@ -45,9 +45,9 @@
                     <th>Cantidad</th>
                     <th>Precio Unitario</th>
                     <th>Subtotal</th>
-
                 </tr>
                 </thead>
+
                 <tbody>
                 <ui:repeat value="#{detalleFacturaBean.obtenerDetalleFacturaPorId(factura.id)}" var="item" varStatus="myVarStatus"
                 >
@@ -57,7 +57,6 @@
                         <td style="text-align: center">#{item.cantidad}</td>
                         <td style="text-align: center">$#{platoBean.buscar(item.plato).precio}</td>
                         <td style="text-align: center">$#{item.subtotal}</td>
-
                     </tr>
                 </ui:repeat>
                 <tr>
@@ -67,7 +66,6 @@
                     <td style="text-align: center">$#{factura.total}</td>
                 </tr>
                 <tr>
-
                     <td colspan="3"></td>
                     <td style="text-align: center">Iva 12%</td>
                     <td style="text-align: center">$#{factura.total*1.12 -  factura.total}</td>
@@ -81,11 +79,7 @@
 
                 </tbody>
             </table>
-
-
         </ui:define>
-
-
     </ui:composition>
 
 </h:body>
