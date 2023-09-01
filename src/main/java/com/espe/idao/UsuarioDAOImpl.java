@@ -41,4 +41,12 @@ public class UsuarioDAOImpl implements IUsuarioDAO {
         return listaUsuarios;
     }
 
+    @Override
+    public void eliminar(int id) {
+        Usuario oUsuario;
+        oUsuario = entityManager.find(Usuario.class, id);
+        entityManager.getTransaction().begin();
+        entityManager.remove(oUsuario);
+        entityManager.getTransaction().commit();
+    }
    
