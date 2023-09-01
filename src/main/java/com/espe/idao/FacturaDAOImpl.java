@@ -42,4 +42,12 @@ public class FacturaDAOImpl implements IFacturaDAO {
         listaFacturas = query.getResultList();
         return listaFacturas;
     }
+    @Override
+    public void eliminar(int id) {
+        Factura oFactura;
+        oFactura = entityManager.find(Factura.class, id);
+        entityManager.getTransaction().begin();
+        entityManager.remove(oFactura);
+        entityManager.getTransaction().commit();
+    }
   
