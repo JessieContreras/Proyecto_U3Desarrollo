@@ -7,7 +7,6 @@ function mostrarCarrito() {
     modal.innerHTML = contenidoCarrito;
     document.body.appendChild(modal);
 
-
     modal.addEventListener("click", function(event) {
         if (event.target === modal) {
             document.body.removeChild(modal);
