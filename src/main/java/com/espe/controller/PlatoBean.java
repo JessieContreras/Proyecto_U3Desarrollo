@@ -68,5 +68,14 @@ public class PlatoBean implements Serializable { ;
         sessionMap.put("plato", oPlato);
         return "./crear.xhtml";
     }
+                                                public String guardar(Plato plato, Part imagenFile) throws IOException{
+        InputStream inputStream = imagenFile.getInputStream();
+        byte[] imageBytes = inputStream.readAllBytes();
+        String base64Image = Base64.getEncoder().encodeToString(imageBytes);
+        System.out.println(base64Image);
+        plato.setImagen(base64Image);
+        platoDAO.editar(plato);
+        return "./index.xhtml";
+    }
 
    
