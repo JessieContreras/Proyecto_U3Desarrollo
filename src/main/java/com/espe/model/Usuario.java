@@ -12,7 +12,7 @@ public class Usuario {
     @Column
     private String correo;
     @Column
-    private String rol; // Agregamos el campo para el rol
+    private String rol; 
     @Column
     private String contrasena; // Agregamos el campo para la contraseña
     // Getters y setters
