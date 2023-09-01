@@ -49,7 +49,6 @@ public class Factura {
     public double getTotal() {
         return total;
     }
-
     public void setTotal(double total) {
         this.total = total;
     }  
