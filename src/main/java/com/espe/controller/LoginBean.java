@@ -80,9 +80,9 @@ public class LoginBean {
             try {
                 // Redirigir a la página deseada
                 externalContext.redirect(externalContext.getRequestContextPath() + "/index.xhtml");
+                
             } catch (IOException e) {
                 // Manejo de errores de redirección
             }
         }
-    
-    }
+ }
