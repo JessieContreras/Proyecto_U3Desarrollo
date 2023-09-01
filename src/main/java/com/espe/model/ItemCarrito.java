@@ -15,23 +15,5 @@ public class ItemCarrito {
         cantidad++;
     }
 
-    public double getTotal() {
-        return plato.getPrecio() * cantidad;
-    }
-
-    public Plato getPlato() {
-        return plato;
-    }
-
-    public void setPlato(Plato plato) {
-        this.plato = plato;
-    }
-
-    public int getCantidad() {
-        return cantidad;
-    }
-
-    public void setCantidad(int cantidad) {
-        this.cantidad = cantidad;
-    }
+    
 }
