@@ -14,7 +14,55 @@
         <ui:define name = "content">
 
                 <style>
-                    
+                    .container {
+                        background-color: #fff;
+                        border-radius: 5px;
+                        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                        padding: 20px;
+                        width: 400px;
+                    }
+
+                    .container h2 {
+                        margin-top: 0;
+                        color: #333;
+                    }
+
+                    .form-group {
+                        margin-bottom: 15px;
+                    }
+
+                    label {
+                        display: block;
+                        margin-bottom: 5px;
+                        color: #666;
+                    }
+
+                    input[type="text"],
+                    textarea {
+                        background: white;
+                        width: 100%;
+                        padding: 10px;
+                        border: 1px solid #ccc;
+                        border-radius: 3px;
+                        outline: none;
+                    }
+
+                    textarea {
+                        resize: vertical;
+                    }
+
+                    input[type="submit"] {
+                        background-color: #333;
+                        color: #fff;
+                        border: none;
+                        border-radius: 3px;
+                        padding: 10px 20px;
+                        cursor: pointer;
+                    }
+
+                    input[type="submit"]:hover {
+                        background-color: #555;
+                    }
                 </style>
 
             <div class="container">
