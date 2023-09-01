@@ -67,5 +67,8 @@ public class LoginBean {
             //return null; // Permanece en la misma página
         }
     }
-
+ public String getStoredRole() {
+        ExternalContext externalContext = FacesContext.getCurrentInstance().getExternalContext();
+        return (String) externalContext.getSessionMap().get("rol");
+    }
  
