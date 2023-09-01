@@ -46,29 +46,3 @@ public class detalleFacturaBean { ;
 
     }
 
-
-
-    public String actualizar(DetalleFactura detalleFactura){
-        detalleFacturaDAO.editar(detalleFactura);
-        return "./index.xhtml";
-    }
-
-    public String eliminar(int id){
-        detalleFacturaDAO.eliminar(id);
-        return "/index.xhtml";
-    }
-
-    public String nuevo(){
-        DetalleFactura oDetalleFactura = new DetalleFactura();
-        //crear una coleccion de tipo map
-        Map<String, Object> sessionMap = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
-        //pasar el objeto por medio del SessionMap hacia la vista
-        sessionMap.put("detalleFactura", oDetalleFactura);
-        return "./crear.xhtml";
-    }
-
-    public String guardar(DetalleFactura detalleFactura){
-        detalleFacturaDAO.guardar(detalleFactura);
-        return "./index.xhtml";
-    }
-}
