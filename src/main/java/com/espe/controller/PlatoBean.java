@@ -82,5 +82,8 @@ public class PlatoBean implements Serializable { ;
 
 
     }
-
+    public Plato buscar(int id){
+        return platoDAO.buscar(id);
+    }
+}
    
