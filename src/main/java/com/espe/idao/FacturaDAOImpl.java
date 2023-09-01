@@ -20,5 +20,11 @@ public class FacturaDAOImpl implements IFacturaDAO {
         return  factura;
         //JPAUtil.shutdown();
     }
-
+     @Override
+        public void editar(Factura factura) {
+            entityManager.getTransaction().begin();
+            entityManager.merge(factura);
+            entityManager.getTransaction().commit();
+            ///JPAUtil.shutdown();
+        }
   
