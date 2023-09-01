@@ -32,6 +32,13 @@ public class UsuarioDAOImpl implements IUsuarioDAO {
         //JPAUtil.shutdown();
         return oUsuario;
     }
-    
+    @Override
+    public List<Usuario> obtenerUsuarios() {
+        List<Usuario> listaUsuarios;
+        //sentencia JPQL
+        Query query = entityManager.createQuery("SELECT u FROM Usuario u");
+        listaUsuarios = query.getResultList();
+        return listaUsuarios;
+    }
 
    
