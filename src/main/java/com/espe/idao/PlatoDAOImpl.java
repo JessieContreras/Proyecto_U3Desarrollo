@@ -39,3 +39,11 @@ public class PlatoDAOImpl implements IPlatoDAO {
         listaPlatos = query.getResultList();
         return listaPlatos;
     }
+     @Override
+    public void eliminar(int id) {
+        Plato oPlato;
+        oPlato = entityManager.find(Plato.class, id);
+        entityManager.getTransaction().begin();
+        entityManager.remove(oPlato);
+        entityManager.getTransaction().commit();
+    }
