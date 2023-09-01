@@ -42,4 +42,15 @@ public class UsuarioBean { ;
         usuarioDAO.eliminar(id);
         return "/index.xhtml";
     }
+    public String nuevo(){
+        Usuario oUsuario = new Usuario();
+        //crear una coleccion de tipo map
+        oUsuario.setRol("admin");
+        Map<String, Object> sessionMap = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
+        //pasar el objeto por medio del SessionMap hacia la vista
+        sessionMap.put("usuario", oUsuario);
+        return "./crear.xhtml";
+    }
+
+                          
                          }
