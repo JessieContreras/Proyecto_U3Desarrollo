@@ -42,3 +42,12 @@ public class CategoriaDAOImpl implements ICategoriaDAO {
         return listaCategorias;
     }
 
+ @Override
+    public void eliminar(int id) {
+        Categoria oCategoria;
+        oCategoria = entityManager.find(Categoria.class, id);
+        entityManager.getTransaction().begin();
+        entityManager.remove(oCategoria);
+        entityManager.getTransaction().commit();
+    }
+}
