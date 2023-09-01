@@ -31,4 +31,12 @@ public class DetalleFacturaDAOImpl implements IDetalleFacturaDAO {
         //JPAUtil.shutdown();
         return oDetalleFactura;
     }
+     @Override
+    public List<DetalleFactura> obtenerDetalleFacturas() {
+        List<DetalleFactura> listaDetalleFacturas;
+        //sentencia JPQL
+        Query query = entityManager.createQuery("SELECT u FROM DetalleFactura u");
+        listaDetalleFacturas = query.getResultList();
+        return listaDetalleFacturas;
+    }
  
