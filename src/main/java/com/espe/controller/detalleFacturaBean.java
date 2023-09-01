@@ -13,8 +13,6 @@ import java.util.Map;
 @RequestScoped
 @Named
 public class detalleFacturaBean { ;
-
-
     IDetalleFacturaDAO detalleFacturaDAO = new DetalleFacturaDAOImpl();
     //Prueba para pasar datos quemados a la vista
     public List<DetalleFactura> obtenerDetalleFacturas(){
@@ -26,7 +24,6 @@ public class detalleFacturaBean { ;
     }
 
     public String editar(int id){
-
         DetalleFactura oDetalleFactura;
         oDetalleFactura = detalleFacturaDAO.buscar(id);
 
@@ -39,10 +36,8 @@ public class detalleFacturaBean { ;
     }
 
     public DetalleFactura obtenerDetalleFacturaPorId(int id){
-
         DetalleFactura oDetalleFactura;
         return detalleFacturaDAO.buscar(id);
-
     }
       public String actualizar(DetalleFactura detalleFactura){
         detalleFacturaDAO.editar(detalleFactura);
@@ -65,5 +60,3 @@ public class detalleFacturaBean { ;
         return "./index.xhtml";
     }
 }
-
-
