@@ -77,5 +77,10 @@ public class PlatoBean implements Serializable { ;
         platoDAO.editar(plato);
         return "./index.xhtml";
     }
+ public List<Plato> obtenerPlatosPorCategoria(int id){
+        return platoDAO.buscarPorCategoria(id);
+
+
+    }
 
    
