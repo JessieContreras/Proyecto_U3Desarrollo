@@ -24,3 +24,10 @@ public class PlatoDAOImpl implements IPlatoDAO {
         entityManager.getTransaction().commit();
         ///JPAUtil.shutdown();
     }
+     @Override
+    public Plato buscar(int id) {
+        Plato oPlato = new Plato();
+        oPlato = entityManager.find(Plato.class, id);
+        //JPAUtil.shutdown();
+        return oPlato;
+    }
