@@ -18,7 +18,6 @@ public class detalleFacturaBean { ;
     public List<DetalleFactura> obtenerDetalleFacturas(){
         return detalleFacturaDAO.obtenerDetalleFacturas();
     }
-
     public List<DetalleFactura> obtenerDetalleFacturas(int factura){
         return detalleFacturaDAO.obtenerDetalleFacturas(factura);
     }
