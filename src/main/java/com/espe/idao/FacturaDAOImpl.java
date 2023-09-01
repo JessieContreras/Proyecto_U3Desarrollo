@@ -34,4 +34,12 @@ public class FacturaDAOImpl implements IFacturaDAO {
         //JPAUtil.shutdown();
         return oFactura;
     }
+    @Override
+    public List<Factura> obtenerFacturas() {
+        List<Factura> listaFacturas;
+        //sentencia JPQL
+        Query query = entityManager.createQuery("SELECT u FROM Factura u");
+        listaFacturas = query.getResultList();
+        return listaFacturas;
+    }
   
