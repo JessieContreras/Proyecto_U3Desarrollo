@@ -43,9 +43,15 @@ public class PlatoBean implements Serializable { ;
         System.out.println(oPlato);
         return "./editar.xhtml";
     }
-
-    
-
+    public String actualizar(Plato plato, Part imagenFile) throws IOException{
+        InputStream inputStream = imagenFile.getInputStream();
+        byte[] imageBytes = inputStream.readAllBytes();
+        String base64Image = Base64.getEncoder().encodeToString(imageBytes);
+        System.out.println(base64Image);
+        plato.setImagen(base64Image);
+        platoDAO.editar(plato);
+        return "./index.xhtml";
+    }
     public String eliminar(int id){
         platoDAO.eliminar(id);
         return "/index.xhtml";
@@ -60,7 +66,7 @@ public class PlatoBean implements Serializable { ;
         sessionMap.put("plato", oPlato);
         return "./crear.xhtml";
     }
-                                                public String guardar(Plato plato, Part imagenFile) throws IOException{
+    public String guardar(Plato plato, Part imagenFile) throws IOException{
         InputStream inputStream = imagenFile.getInputStream();
         byte[] imageBytes = inputStream.readAllBytes();
         String base64Image = Base64.getEncoder().encodeToString(imageBytes);
@@ -69,7 +75,7 @@ public class PlatoBean implements Serializable { ;
         platoDAO.editar(plato);
         return "./index.xhtml";
     }
- public List<Plato> obtenerPlatosPorCategoria(int id){
+    public List<Plato> obtenerPlatosPorCategoria(int id){
         return platoDAO.buscarPorCategoria(id);
 
 
@@ -78,4 +84,3 @@ public class PlatoBean implements Serializable { ;
         return platoDAO.buscar(id);
     }
 }
-   
