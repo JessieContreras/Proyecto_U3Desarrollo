@@ -1,5 +1,6 @@
 package com.espe.model;
 
+
 import jakarta.persistence.*;
 @Entity
 @Table(name = "usuarios")
