@@ -5,7 +5,7 @@ import com.espe.model.JPAUtil;
 import com.espe.model.Factura;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Query;
-
+ 
 import java.util.List;
 
 public class FacturaDAOImpl implements IFacturaDAO {
