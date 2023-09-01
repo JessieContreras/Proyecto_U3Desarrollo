@@ -27,8 +27,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <ui:repeat value="#{carritoBean.carrito}" var="item" varStatus="myVarStatus"
-                >
+                <ui:repeat value="#{carritoBean.carrito}" var="item" varStatus="myVarStatus">
                     <tr>
                         <td style="text-align: center">#{myVarStatus.index +1}</td>
                         <td style="text-align: center">#{item.plato.nombre}</td>
