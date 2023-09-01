@@ -24,5 +24,11 @@ public class DetalleFacturaDAOImpl implements IDetalleFacturaDAO {
         entityManager.getTransaction().commit();
         ///JPAUtil.shutdown();
     }
-
+    @Override
+    public DetalleFactura buscar(int id) {
+        DetalleFactura oDetalleFactura = new DetalleFactura();
+        oDetalleFactura = entityManager.find(DetalleFactura.class, id);
+        //JPAUtil.shutdown();
+        return oDetalleFactura;
+    }
  
