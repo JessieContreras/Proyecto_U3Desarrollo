@@ -2,7 +2,6 @@ package com.espe.model;
 import jakarta.persistence.*;
 import org.hibernate.annotations.Type;
 
-
 @Entity
 @Table(name = "platos")
 public class Plato {
