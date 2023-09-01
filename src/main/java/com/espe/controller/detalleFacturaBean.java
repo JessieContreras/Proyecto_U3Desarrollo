@@ -45,4 +45,8 @@ public class detalleFacturaBean { ;
 
 
     }
+      public String actualizar(DetalleFactura detalleFactura){
+        detalleFacturaDAO.editar(detalleFactura);
+        return "./index.xhtml";
+    }
 
