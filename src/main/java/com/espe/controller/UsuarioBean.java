@@ -59,3 +59,4 @@ public class UsuarioBean { ;
         return "index.xhtml";
     }
 }
+
