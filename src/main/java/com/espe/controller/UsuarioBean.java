@@ -55,6 +55,8 @@ public class UsuarioBean { ;
         usuarioDAO.guardar(usuario);
         return "./index.xhtml";
     }
-
-                          
-                         }
+    public String guardarCliente(Usuario usuario){
+        usuarioDAO.guardar(usuario);
+        return "index.xhtml";
+    }
+}
