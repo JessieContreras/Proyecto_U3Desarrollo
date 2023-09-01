@@ -43,7 +43,6 @@ public class detalleFacturaBean { ;
         DetalleFactura oDetalleFactura;
         return detalleFacturaDAO.buscar(id);
 
-
     }
       public String actualizar(DetalleFactura detalleFactura){
         detalleFacturaDAO.editar(detalleFactura);
