@@ -38,11 +38,7 @@ public class CategoriaBean { ;
 
         Categoria oCategoria;
         return categoriaDAO.buscar(id);
-
-
     }
-
-
 
     public String actualizar(Categoria categoria){
         categoriaDAO.editar(categoria);
@@ -53,7 +49,7 @@ public class CategoriaBean { ;
         categoriaDAO.eliminar(id);
         return "/index.xhtml";
     }
- public String nuevo(){
+     public String nuevo(){
         Categoria oCategoria = new Categoria();
         //crear una coleccion de tipo map
         Map<String, Object> sessionMap = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
