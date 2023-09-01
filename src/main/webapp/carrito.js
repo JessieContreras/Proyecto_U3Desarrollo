@@ -21,3 +21,4 @@ function redirectToPage(role) {
         window.location.href = 'usuario/index.xhtml';
     }
 }
+
