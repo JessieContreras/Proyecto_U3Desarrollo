@@ -51,6 +51,10 @@ public class UsuarioBean { ;
         sessionMap.put("usuario", oUsuario);
         return "./crear.xhtml";
     }
+     public String guardar(Usuario usuario){
+        usuarioDAO.guardar(usuario);
+        return "./index.xhtml";
+    }
 
                           
                          }
