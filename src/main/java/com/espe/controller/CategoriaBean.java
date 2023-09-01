@@ -13,22 +13,28 @@ import java.util.Map;
 @RequestScoped
 @Named
 public class CategoriaBean { ;
-
-
     ICategoriaDAO categoriaDAO = new CategoriaDAOImpl();
     //Prueba para pasar datos quemados a la vista
     public List<Categoria> obtenerCategorias(){
         return categoriaDAO.obtenerCategorias();
     }
+    public String editar(int id){
 
-   
+        Categoria oCategoria;
+        oCategoria = categoriaDAO.buscar(id);
 
+        //crear una coleccion de tipo map
+        Map<String, Object> sessionMap = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
+        //pasar el objeto por medio del SessionMap hacia la vista
+        sessionMap.put("categoria", oCategoria);
+        System.out.println(oCategoria);
+        return "./editar.xhtml";
+    }
     public Categoria obtenerCategoriaPorId(int id){
 
         Categoria oCategoria;
         return categoriaDAO.buscar(id);
     }
-
     public String actualizar(Categoria categoria){
         categoriaDAO.editar(categoria);
         return "./index.xhtml";
@@ -46,11 +52,8 @@ public class CategoriaBean { ;
         sessionMap.put("categoria", oCategoria);
         return "./crear.xhtml";
     }
-
     public String guardar(Categoria categoria){
         categoriaDAO.guardar(categoria);
         return "./index.xhtml";
     }
 }
-
-   
