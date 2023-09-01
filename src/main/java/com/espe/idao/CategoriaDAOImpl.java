@@ -5,7 +5,6 @@ import com.espe.model.Categoria;
 import com.espe.model.JPAUtil;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Query;
-
 import java.util.List;
 
 public class CategoriaDAOImpl implements ICategoriaDAO {
