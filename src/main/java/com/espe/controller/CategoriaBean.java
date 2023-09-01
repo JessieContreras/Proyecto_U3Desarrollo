@@ -21,18 +21,7 @@ public class CategoriaBean { ;
         return categoriaDAO.obtenerCategorias();
     }
 
-    public String editar(int id){
-
-        Categoria oCategoria;
-        oCategoria = categoriaDAO.buscar(id);
-
-        //crear una coleccion de tipo map
-        Map<String, Object> sessionMap = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
-        //pasar el objeto por medio del SessionMap hacia la vista
-        sessionMap.put("categoria", oCategoria);
-        System.out.println(oCategoria);
-        return "./editar.xhtml";
-    }
+   
 
     public Categoria obtenerCategoriaPorId(int id){
 
