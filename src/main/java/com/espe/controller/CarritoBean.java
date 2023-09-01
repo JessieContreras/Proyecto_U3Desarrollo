@@ -36,7 +36,21 @@ public class CarritoBean implements Serializable {
     IDetalleFacturaDAO detalleFacturaDAO = new DetalleFacturaDAOImpl();
 
     DecimalFormat df = new DecimalFormat("#.00");
-   
+    public void agregarProducto(Plato plato) {
+        // Busca si el producto ya está en el carrito
+        ItemCarrito itemExistente = carrito.stream()
+                .filter(item -> item.getPlato().equals(plato))
+                .findFirst()
+                .orElse(null);
+
+        if (itemExistente != null) {
+            // Si el producto ya está en el carrito, aumenta la cantidad
+            itemExistente.aumentarCantidad();
+        } else {
+            // Si el producto no está en el carrito, agrega uno nuevo
+            carrito.add(new ItemCarrito(plato));
+        }
+    }
 
     public void eliminarProducto(Plato producto) {
         carrito.removeIf(item -> item.getPlato().equals(producto));
