@@ -27,4 +27,11 @@ public class FacturaDAOImpl implements IFacturaDAO {
             entityManager.getTransaction().commit();
             ///JPAUtil.shutdown();
         }
+     @Override
+    public Factura buscar(int id) {
+        Factura oFactura = new Factura();
+        oFactura = entityManager.find(Factura.class, id);
+        //JPAUtil.shutdown();
+        return oFactura;
+    }
   
