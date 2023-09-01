@@ -61,4 +61,10 @@ public class detalleFacturaBean { ;
         sessionMap.put("detalleFactura", oDetalleFactura);
         return "./crear.xhtml";
     }
+       public String guardar(DetalleFactura detalleFactura){
+        detalleFacturaDAO.guardar(detalleFactura);
+        return "./index.xhtml";
+    }
+}
+
 
