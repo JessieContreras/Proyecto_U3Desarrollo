@@ -14,7 +14,6 @@ import java.util.Map;
 @Named
 public class FacturaBean {
 
-
     IFacturaDAO facturaDAO = new FacturaDAOImpl();
     //Prueba para pasar datos quemados a la vista
     public List<Factura> obtenerFacturas(){
@@ -33,17 +32,11 @@ public class FacturaBean {
         return "./editar.xhtml";
     }
 
-
-
     public Factura obtenerFacturaPorId(int id){
 
         Factura oFactura;
         return facturaDAO.buscar(id);
-
-
     }
-
-
 
     public String actualizar(Factura factura){
         facturaDAO.editar(factura);
@@ -64,7 +57,7 @@ public class FacturaBean {
         return "./crear.xhtml";
     }
 
-  public String guardar(Factura factura){
+      public String guardar(Factura factura){
         facturaDAO.guardar(factura);
         return "./index.xhtml";
     }
