@@ -42,31 +42,7 @@ public class LoginBean {
         this.password = password;
     }
 
-    public void login() {
-        Usuario usuario = usuarioDAO.buscarLogin(username,password);
-        if ( usuario != null) {
-            // Autenticación exitosa, realizar acciones de inicio de sesión
-            FacesContext context = FacesContext.getCurrentInstance();
-            ExternalContext externalContext = context.getExternalContext();
-
-            // Ejemplo: asignar el nombre de usuario a la sesión
-            externalContext.getSessionMap().put("session", usuario);
-
-            try {
-                // Redirigir a la página deseada
-                externalContext.redirect(externalContext.getRequestContextPath() + "/admin/usuario/index.xhtml");
-
-            } catch (IOException e) {
-                // Manejo de errores de redirección
-            }
-
-            //return null; // No hay navegación implícita
-        } else {
-            // Autenticación fallida, muestra un mensaje de error
-            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error", "Usuario o contraseña incorrectos"));
-            //return null; // Permanece en la misma página
-        }
-    }
+   
     
      public String getStoredRole() {
             ExternalContext externalContext = FacesContext.getCurrentInstance().getExternalContext();
