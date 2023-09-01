@@ -17,3 +17,10 @@ public class PlatoDAOImpl implements IPlatoDAO {
         entityManager.getTransaction().commit();
         //JPAUtil.shutdown();
     }
+     @Override
+    public void editar(Plato plato) {
+        entityManager.getTransaction().begin();
+        entityManager.merge(plato);
+        entityManager.getTransaction().commit();
+        ///JPAUtil.shutdown();
+    }
