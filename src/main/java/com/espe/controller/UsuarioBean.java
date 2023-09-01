@@ -22,18 +22,7 @@ public class UsuarioBean { ;
         return usuarioDAO.obtenerUsuarios();
     }
 
-    public String editar(int id){
-
-        Usuario oUsuario;
-        oUsuario = usuarioDAO.buscar(id);
-
-        //crear una coleccion de tipo map
-        Map<String, Object> sessionMap = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
-        //pasar el objeto por medio del SessionMap hacia la vista
-        sessionMap.put("usuario", oUsuario);
-        System.out.println(oUsuario);
-        return "./editar.xhtml";
-    }
+    
     public String actualizar(Usuario usuario){
         usuarioDAO.editar(usuario);
         return "./index.xhtml";
