@@ -17,7 +17,20 @@ public class PlatoDAOImpl implements IPlatoDAO {
         entityManager.getTransaction().commit();
         //JPAUtil.shutdown();
     }
-    
+     @Override
+    public void editar(Plato plato) {
+        entityManager.getTransaction().begin();
+        entityManager.merge(plato);
+        entityManager.getTransaction().commit();
+        ///JPAUtil.shutdown();
+    }
+     @Override
+    public Plato buscar(int id) {
+        Plato oPlato = new Plato();
+        oPlato = entityManager.find(Plato.class, id);
+        //JPAUtil.shutdown();
+        return oPlato;
+    }
      @Override
     public List<Plato> obtenerPlatos() {
         List<Plato> listaPlatos;
