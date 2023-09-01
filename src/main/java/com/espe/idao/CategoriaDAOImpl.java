@@ -24,5 +24,12 @@ public class CategoriaDAOImpl implements ICategoriaDAO {
         entityManager.getTransaction().commit();
         ///JPAUtil.shutdown();
     }
-
+    
+ @Override
+    public Categoria buscar(int id) {
+        Categoria oCategoria = new Categoria();
+        oCategoria = entityManager.find(Categoria.class, id);
+        //JPAUtil.shutdown();
+        return oCategoria;
+    }
 }
