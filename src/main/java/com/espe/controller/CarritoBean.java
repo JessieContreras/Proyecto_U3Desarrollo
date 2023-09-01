@@ -110,4 +110,20 @@ public class CarritoBean implements Serializable {
         carrito =  new ArrayList<>();
         return "factura.xhtml";
     }
-  
+    public String procederPago(){
+        ExternalContext externalContext = FacesContext.getCurrentInstance().getExternalContext();
+        if(externalContext.getSessionMap().get("session")!=null){
+            return "carrito.xhtml";
+        }else{
+            Usuario oUsuario = new Usuario();
+            //crear una coleccion de tipo map
+            oUsuario.setRol("cliente");
+            Map<String, Object> sessionMap = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
+            //pasar el objeto por medio del SessionMap hacia la vista
+            sessionMap.put("usuario", oUsuario);
+            return "registerClient.xhtml";
+        }
+
+    }
+}
+
