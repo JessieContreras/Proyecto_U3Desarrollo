@@ -5,7 +5,6 @@ import com.espe.model.DetalleFactura;
 import com.espe.model.JPAUtil;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Query;
-
 import java.util.List;
 
 public class DetalleFacturaDAOImpl implements IDetalleFacturaDAO {
