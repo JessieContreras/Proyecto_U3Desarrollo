@@ -51,7 +51,6 @@ public class CarritoBean implements Serializable {
             carrito.add(new ItemCarrito(plato));
         }
     }
-
     public void eliminarProducto(Plato producto) {
         carrito.removeIf(item -> item.getPlato().equals(producto));
     }
@@ -67,9 +66,21 @@ public class CarritoBean implements Serializable {
 
         return df.format(subtotal());
     }
-    
-   
+     public double iva() {
+        double iva = subtotal();
 
+        return (iva*1.12 - iva);
+    }
+    public String ivaString() {
+        return df.format( iva() );
+    }
+    public double total() {
+        return (subtotal()*1.12);
+    }
+    public String totalString() {
+
+        return df.format(total() );
+    }  
     public String faturar() {
         Factura factura = new Factura();
         Map<String, Object> sessionMap = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
@@ -111,7 +122,5 @@ public class CarritoBean implements Serializable {
             sessionMap.put("usuario", oUsuario);
             return "registerClient.xhtml";
         }
-
     }
 }
-
