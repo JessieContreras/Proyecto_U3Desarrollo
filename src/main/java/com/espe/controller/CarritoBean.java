@@ -99,6 +99,7 @@ public class CarritoBean implements Serializable {
             df.setPlato(car.getPlato().getId());
             df.setSubtotal(car.getPlato().getId()*car.getCantidad());
 
+            
             detalleFacturaDAO.guardar(df);
         }
 
