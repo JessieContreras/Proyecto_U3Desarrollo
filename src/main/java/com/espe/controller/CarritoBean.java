@@ -88,13 +88,13 @@ public class CarritoBean implements Serializable {
         Factura factura = new Factura();
         Map<String, Object> sessionMap = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
 
-        LocalDate lt
-                = LocalDate.now();
+        LocalDate lt = LocalDate.now();
         Usuario user = (Usuario) sessionMap.get("session");
         factura.setFecha(lt);
         factura.setTotal(subtotal());
         factura.setUsuario(user.getId());
       Factura fac =   facturaDAO.guardar(factura);
+        
         for (ItemCarrito car:carrito ) {
             DetalleFactura df = new DetalleFactura();
             df.setCantidad(car.getCantidad());
