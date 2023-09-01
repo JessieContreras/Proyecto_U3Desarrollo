@@ -38,4 +38,8 @@ public class UsuarioBean { ;
         usuarioDAO.editar(usuario);
         return "./index.xhtml";
     }
+    public String eliminar(int id){
+        usuarioDAO.eliminar(id);
+        return "/index.xhtml";
+    }
                          }
