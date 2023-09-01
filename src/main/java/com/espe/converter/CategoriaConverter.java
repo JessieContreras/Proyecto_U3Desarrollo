@@ -30,9 +30,7 @@ public class CategoriaConverter implements Converter<Categoria> {
             return categoriaBean.obtenerCategoriaPorId(id);
         }
         return null;
-    }
-
-    
+    }   
     @Override
     public String getAsString(FacesContext context, UIComponent component, Categoria categoria) {
         if (categoria != null) {
