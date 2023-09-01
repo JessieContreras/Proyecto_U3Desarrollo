@@ -12,7 +12,6 @@
 <h:body>
 
     <ui:composition template = "../templates/commonAdmin.xhtml">
-
         <ui:define name = "content">
             <h:form id="agregarCategoria">
                 <div class="table-container"> <!-- Agregar el contenedor para centrar -->
@@ -22,7 +21,6 @@
                         </f:facet>
                         <h:outputText value="Nombre" />
                         <h:inputText value="#{categoria.nombre}" />
-
                         <f:facet name="footer">
                             <h:commandButton value="Guardar" action="#{categoriaBean.guardar(categoria)}" styleClass="button" />
                         </f:facet>
