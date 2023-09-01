@@ -67,21 +67,22 @@ public class LoginBean {
             //return null; // Permanece en la misma página
         }
     }
- public String getStoredRole() {
-        ExternalContext externalContext = FacesContext.getCurrentInstance().getExternalContext();
-        return (String) externalContext.getSessionMap().get("rol");
-    }
- public void logout(){
-        FacesContext context = FacesContext.getCurrentInstance();
-        ExternalContext externalContext = context.getExternalContext();
-        FacesContext.getCurrentInstance().getExternalContext().getSessionMap().remove("session");
-
-        try {
-            // Redirigir a la página deseada
-            externalContext.redirect(externalContext.getRequestContextPath() + "/index.xhtml");
-        } catch (IOException e) {
-            // Manejo de errores de redirección
+    
+     public String getStoredRole() {
+            ExternalContext externalContext = FacesContext.getCurrentInstance().getExternalContext();
+            return (String) externalContext.getSessionMap().get("rol");
         }
+     public void logout(){
+            FacesContext context = FacesContext.getCurrentInstance();
+            ExternalContext externalContext = context.getExternalContext();
+            FacesContext.getCurrentInstance().getExternalContext().getSessionMap().remove("session");
+    
+            try {
+                // Redirigir a la página deseada
+                externalContext.redirect(externalContext.getRequestContextPath() + "/index.xhtml");
+            } catch (IOException e) {
+                // Manejo de errores de redirección
+            }
+        }
+    
     }
-
-}
