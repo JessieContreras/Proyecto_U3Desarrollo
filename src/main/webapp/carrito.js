@@ -5,7 +5,7 @@ function mostrarCarrito() {
     var modal = document.createElement("div");
     modal.className = "carrito-modal";
     modal.innerHTML = contenidoCarrito;
-
+    
     document.body.appendChild(modal);
 
     modal.addEventListener("click", function(event) {
