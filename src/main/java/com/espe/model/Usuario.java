@@ -11,8 +11,7 @@ public class Usuario {
     private String nombre;
     @Column
     private String correo;
-    @Column
-    private String rol; 
+    
     @Column
     private String contrasena; // Agregamos el campo para la contraseña
     // Getters y setters
