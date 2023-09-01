@@ -33,3 +33,12 @@ public class CategoriaDAOImpl implements ICategoriaDAO {
         return oCategoria;
     }
 }
+    @Override
+    public List<Categoria> obtenerCategorias() {
+        List<Categoria> listaCategorias;
+        //sentencia JPQL
+        Query query = entityManager.createQuery("SELECT u FROM Categoria u");
+        listaCategorias = query.getResultList();
+        return listaCategorias;
+    }
+
