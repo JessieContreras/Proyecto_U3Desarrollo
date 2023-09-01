@@ -53,4 +53,12 @@ public class detalleFacturaBean { ;
         detalleFacturaDAO.eliminar(id);
         return "/index.xhtml";
     }
+        public String nuevo(){
+        DetalleFactura oDetalleFactura = new DetalleFactura();
+        //crear una coleccion de tipo map
+        Map<String, Object> sessionMap = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
+        //pasar el objeto por medio del SessionMap hacia la vista
+        sessionMap.put("detalleFactura", oDetalleFactura);
+        return "./crear.xhtml";
+    }
 
