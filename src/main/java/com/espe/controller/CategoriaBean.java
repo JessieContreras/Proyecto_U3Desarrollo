@@ -22,7 +22,6 @@ public class CategoriaBean { ;
 
         Categoria oCategoria;
         oCategoria = categoriaDAO.buscar(id);
-
         //crear una coleccion de tipo map
         Map<String, Object> sessionMap = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
         //pasar el objeto por medio del SessionMap hacia la vista
