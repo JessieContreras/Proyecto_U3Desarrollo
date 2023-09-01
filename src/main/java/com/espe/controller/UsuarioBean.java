@@ -34,5 +34,8 @@ public class UsuarioBean { ;
         System.out.println(oUsuario);
         return "./editar.xhtml";
     }
-
+    public String actualizar(Usuario usuario){
+        usuarioDAO.editar(usuario);
+        return "./index.xhtml";
+    }
                          }
