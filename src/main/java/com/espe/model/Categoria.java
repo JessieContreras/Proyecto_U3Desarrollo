@@ -9,8 +9,6 @@ public class Categoria {
     @Column
     private String nombre;
 
-    // Getters y setters
-
     public Long getId() {
         return id;
     }
