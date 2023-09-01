@@ -2,7 +2,8 @@ package com.espe.model;
 
 public class ItemCarrito {
    
-
+    private Plato plato;
+    private int cantidad;
     // Constructores, getters y setters
 
     public ItemCarrito(Plato plato) {
