@@ -35,33 +35,4 @@ public class UsuarioBean { ;
         return "./editar.xhtml";
     }
 
-    public String actualizar(Usuario usuario){
-        usuarioDAO.editar(usuario);
-        return "./index.xhtml";
-    }
-
-    public String eliminar(int id){
-        usuarioDAO.eliminar(id);
-        return "/index.xhtml";
-    }
-
-    public String nuevo(){
-        Usuario oUsuario = new Usuario();
-        //crear una coleccion de tipo map
-        oUsuario.setRol("admin");
-        Map<String, Object> sessionMap = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
-        //pasar el objeto por medio del SessionMap hacia la vista
-        sessionMap.put("usuario", oUsuario);
-        return "./crear.xhtml";
-    }
-
-    public String guardar(Usuario usuario){
-        usuarioDAO.guardar(usuario);
-        return "./index.xhtml";
-    }
-
-    public String guardarCliente(Usuario usuario){
-        usuarioDAO.guardar(usuario);
-        return "index.xhtml";
-    }
-}
+                         }
