@@ -2,6 +2,7 @@
 var contenidoCarrito = "<div>Contenido del carrito...</div>";
 
 function mostrarCarrito() {
+    
     var modal = document.createElement("div");
     modal.className = "carrito-modal";
     modal.innerHTML = contenidoCarrito;
