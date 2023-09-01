@@ -54,17 +54,4 @@ public class CategoriaBean { ;
         return "/index.xhtml";
     }
 
-    public String nuevo(){
-        Categoria oCategoria = new Categoria();
-        //crear una coleccion de tipo map
-        Map<String, Object> sessionMap = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
-        //pasar el objeto por medio del SessionMap hacia la vista
-        sessionMap.put("categoria", oCategoria);
-        return "./crear.xhtml";
-    }
-
-    public String guardar(Categoria categoria){
-        categoriaDAO.guardar(categoria);
-        return "./index.xhtml";
-    }
-}
+   
