@@ -49,4 +49,8 @@ public class detalleFacturaBean { ;
         detalleFacturaDAO.editar(detalleFactura);
         return "./index.xhtml";
     }
+       public String eliminar(int id){
+        detalleFacturaDAO.eliminar(id);
+        return "/index.xhtml";
+    }
 
