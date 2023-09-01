@@ -55,6 +55,14 @@ public class FacturaBean {
         return "/index.xhtml";
     }
 
+        public String nuevo(){
+        Factura oFactura = new Factura();
+        //crear una coleccion de tipo map
+        Map<String, Object> sessionMap = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
+        //pasar el objeto por medio del SessionMap hacia la vista
+        sessionMap.put("factura", oFactura);
+        return "./crear.xhtml";
+    }
 
 
     public String guardar(Factura factura){
