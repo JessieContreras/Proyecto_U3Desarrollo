@@ -55,7 +55,18 @@ public class CarritoBean implements Serializable {
     public void eliminarProducto(Plato producto) {
         carrito.removeIf(item -> item.getPlato().equals(producto));
     }
+    public double subtotal() {
+        double subtotal = 0.0;
+        for(ItemCarrito pro :carrito) {
+            subtotal += pro.getPlato().getPrecio() * pro.getCantidad();
+        }
+        return subtotal;
+    }
 
+    public String subtotalString() {
+
+        return df.format(subtotal());
+    }
     
     public double iva() {
         double iva = subtotal();
