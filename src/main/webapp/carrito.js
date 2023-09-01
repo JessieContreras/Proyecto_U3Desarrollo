@@ -18,6 +18,7 @@ function mostrarCarrito() {
 
 function redirectToPage(role) {
     if (role === 'usuario') {
+        
         window.location.href = 'usuario/index.xhtml';
     }
 }
