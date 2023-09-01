@@ -49,4 +49,16 @@ public class UsuarioDAOImpl implements IUsuarioDAO {
         entityManager.remove(oUsuario);
         entityManager.getTransaction().commit();
     }
+     @Override
+    public Usuario   buscarLogin(String username, String contrasena){
+        Usuario usuario;
+        //sentencia JPQL
+        Query query = entityManager.createQuery("SELECT u FROM Usuario u where u.correo=:correo and u.contrasena=:contrasena");
+        query.setParameter("correo",username);
+        query.setParameter("contrasena",contrasena);
+        usuario = (Usuario) query.getSingleResult();
+        return usuario;
+    }
+}
+
    
