@@ -127,17 +127,5 @@ input[type=submit] {
 
 }
 
-table ,th, td {border: none;}
 
-
-table {
-    border-collapse: collapse;
-    width: 100%;
-}
-
-th, td {
-    padding: 8px;
-    text-align: left;
-    border-bottom: 1px solid #DDD;
-}
 
