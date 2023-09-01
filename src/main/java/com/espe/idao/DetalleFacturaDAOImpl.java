@@ -47,4 +47,16 @@ public class DetalleFacturaDAOImpl implements IDetalleFacturaDAO {
         entityManager.remove(oDetalleFactura);
         entityManager.getTransaction().commit();
     }
+     @Override
+    public List<DetalleFactura> obtenerDetalleFacturas(int factura) {
+        List<DetalleFactura> listaDetalleFacturas;
+        //sentencia JPQL
+        Query query = entityManager.createQuery("SELECT u FROM DetalleFactura u where u.factura=:factura");
+        query.setParameter("factura",factura);
+        listaDetalleFacturas = query.getResultList();
+        return listaDetalleFacturas;
+    }
+
+}
+
  
