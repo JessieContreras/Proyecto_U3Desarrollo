@@ -17,5 +17,12 @@ public class DetalleFacturaDAOImpl implements IDetalleFacturaDAO {
         entityManager.getTransaction().commit();
         //JPAUtil.shutdown();
     }
+    @Override
+    public void editar(DetalleFactura detalleDetalleFactura) {
+        entityManager.getTransaction().begin();
+        entityManager.merge(detalleDetalleFactura);
+        entityManager.getTransaction().commit();
+        ///JPAUtil.shutdown();
+    }
 
  
