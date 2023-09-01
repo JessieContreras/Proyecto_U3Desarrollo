@@ -65,8 +65,4 @@ public class FacturaBean {
     }
 
 
-    public String guardar(Factura factura){
-        facturaDAO.guardar(factura);
-        return "./index.xhtml";
-    }
-}
+  
