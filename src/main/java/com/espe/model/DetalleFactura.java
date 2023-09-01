@@ -1,6 +1,7 @@
 package com.espe.model;
 import jakarta.persistence.*;
 
+
 @Entity
 @Table(name = "detalles_factura")
 public class DetalleFactura {
