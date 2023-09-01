@@ -19,18 +19,26 @@ public class FacturaBean {
     public List<Factura> obtenerFacturas(){
         return facturaDAO.obtenerFacturas();
     }
-    
+    public String editar(int id){
 
+        Factura oFactura;
+        oFactura = facturaDAO.buscar(id);
+
+        //crear una coleccion de tipo map
+        Map<String, Object> sessionMap = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
+        //pasar el objeto por medio del SessionMap hacia la vista
+        sessionMap.put("factura", oFactura);
+        System.out.println(oFactura);
+        return "./editar.xhtml";
+    }
     public Factura obtenerFacturaPorId(int id){
         Factura oFactura;
         return facturaDAO.buscar(id);
     }
-
     public String actualizar(Factura factura){
         facturaDAO.editar(factura);
         return "./index.xhtml";
     }
-
     public String eliminar(int id){
         facturaDAO.eliminar(id);
         return "/index.xhtml";
@@ -49,5 +57,3 @@ public class FacturaBean {
         return "./index.xhtml";
     }
 }
-
-  
