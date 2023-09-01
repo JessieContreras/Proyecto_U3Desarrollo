@@ -69,23 +69,4 @@ public class PlatoBean implements Serializable { ;
         return "./crear.xhtml";
     }
 
-    public String guardar(Plato plato, Part imagenFile) throws IOException{
-        InputStream inputStream = imagenFile.getInputStream();
-        byte[] imageBytes = inputStream.readAllBytes();
-        String base64Image = Base64.getEncoder().encodeToString(imageBytes);
-        System.out.println(base64Image);
-        plato.setImagen(base64Image);
-        platoDAO.editar(plato);
-        return "./index.xhtml";
-    }
-
-    public List<Plato> obtenerPlatosPorCategoria(int id){
-        return platoDAO.buscarPorCategoria(id);
-
-
-    }
-
-    public Plato buscar(int id){
-        return platoDAO.buscar(id);
-    }
-}
+   
