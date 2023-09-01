@@ -44,15 +44,7 @@ public class PlatoBean implements Serializable { ;
         return "./editar.xhtml";
     }
 
-    public String actualizar(Plato plato, Part imagenFile) throws IOException{
-        InputStream inputStream = imagenFile.getInputStream();
-        byte[] imageBytes = inputStream.readAllBytes();
-        String base64Image = Base64.getEncoder().encodeToString(imageBytes);
-        System.out.println(base64Image);
-        plato.setImagen(base64Image);
-        platoDAO.editar(plato);
-        return "./index.xhtml";
-    }
+    
 
     public String eliminar(int id){
         platoDAO.eliminar(id);
