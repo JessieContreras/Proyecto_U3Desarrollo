@@ -50,6 +50,14 @@ public class FacturaDAOImpl implements IFacturaDAO {
         entityManager.remove(oFactura);
         entityManager.getTransaction().commit();
     }
-  
-   
+   @Override
+    public Factura   buscarLogin(String username, String contrasena){
+        Factura factura;
+        //sentencia JPQL
+        Query query = entityManager.createQuery("SELECT u FROM Factura u where u.correo=:correo and u.contrasena=:contrasena");
+        query.setParameter("correo",username);
+        query.setParameter("contrasena",contrasena);
+        factura = (Factura) query.getSingleResult();
+        return factura;
+    }
 }
