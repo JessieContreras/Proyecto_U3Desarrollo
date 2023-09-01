@@ -32,6 +32,7 @@ public class CategoriaConverter implements Converter<Categoria> {
         return null;
     }
 
+    
     @Override
     public String getAsString(FacesContext context, UIComponent component, Categoria categoria) {
         if (categoria != null) {
