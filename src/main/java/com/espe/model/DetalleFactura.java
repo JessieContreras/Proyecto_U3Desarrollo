@@ -8,14 +8,6 @@ public class DetalleFactura {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column
-    private Long factura;
-
-    @Column
-    private Long plato;
-
-    private int cantidad;
-    private double subtotal;
 
     public DetalleFactura() {
         super();
