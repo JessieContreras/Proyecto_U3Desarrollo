@@ -16,6 +16,7 @@
 <div style="padding: 35px">
             <ui:repeat value="#{categoriaBean.obtenerCategorias()}" var="categoria">
                 <h1>#{categoria.nombre}</h1>
+
                 <div style="display: flex">
 
                 <ui:repeat value="#{platoBean.obtenerPlatosPorCategoria(categoria.id)}" var="plato">
