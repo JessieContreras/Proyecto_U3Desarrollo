@@ -39,4 +39,12 @@ public class DetalleFacturaDAOImpl implements IDetalleFacturaDAO {
         listaDetalleFacturas = query.getResultList();
         return listaDetalleFacturas;
     }
+     @Override
+    public void eliminar(int id) {
+        DetalleFactura oDetalleFactura;
+        oDetalleFactura = entityManager.find(DetalleFactura.class, id);
+        entityManager.getTransaction().begin();
+        entityManager.remove(oDetalleFactura);
+        entityManager.getTransaction().commit();
+    }
  
