@@ -47,3 +47,4 @@ public class PlatoDAOImpl implements IPlatoDAO {
         entityManager.remove(oPlato);
         entityManager.getTransaction().commit();
     }
+}
