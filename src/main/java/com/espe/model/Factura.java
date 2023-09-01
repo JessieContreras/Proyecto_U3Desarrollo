@@ -10,15 +10,7 @@ import java.util.List;
 public class Factura {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
 
-    @Column
-    private Long usuario;
-    @Column
-    private LocalDate fecha;
-
-    @Column
-    private double total;
 
     // Getters y setters
 
